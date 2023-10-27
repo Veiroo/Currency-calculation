@@ -1,40 +1,45 @@
-let formElement = document.querySelector(".js-form");
-let selectElement = document.querySelector(".js-select");
-let resultElement = document.querySelector(".js-result");
-let option3Element = document.querySelector(".js-select__option");
-let option4Element = document.querySelector(".js-select__option1");
-let option5Element = document.querySelector(".js-select__option2");
-let option6Element = document.querySelector(".js-select__option3");
-let option7Element = document.querySelector(".js-select__option4");
-let valueElement = document.querySelector(".js-value");
+{
 
-formElement.addEventListener("input", (event) => {
-    event.preventDefault();
+    let formElement = document.querySelector(".js-form");
+    let selectElement = document.querySelector(".js-select");
+    let resultElement = document.querySelector(".js-result");
+    let valueElement = document.querySelector(".js-value");
 
-    let currency = selectElement.value;
-    let amount = valueElement.value;
+    formElement.addEventListener("input", (event) => {
+        event.preventDefault();
 
-    let rate;
+        const currency = selectElement.value;
+        const amount = valueElement.value;
 
-    switch (currency) {
-        case "dolarAmerykański":
-            rate = 0.23;
-            break;
-        case "dolarNowozelandzki":
-            rate = 0.36
-            break;
-        case "dolarKanadyjski":
-            rate = 0.31
-            break;
-        case "lej":
-            rate = 1.04
-            break;
-    }
+        const calculatResult = (amount, currency) => {
+            const ratedolarAmerykański = 0.23;
+            const ratedolarNowozelandzki = 0.36;
+            const ratedolarKanadyjski = 0.31;
+            const ratelej = 1.04;
+            
 
-    let resultt = amount * rate;
+            switch (currency) {
 
-    resultElement.innerText = resultt.toFixed(2);
-});
+                case "dolarAmerykański":
+                    return amount * ratedolarAmerykański;
+
+                case "dolarNowozelandzki":
+                    return amount * ratedolarNowozelandzki;
+
+                case "dolarKanadyjski":
+                    return amount * ratedolarKanadyjski;
+
+                case "lej":
+                    return amount * ratelej;
+            } 
+        }
+
+        const result = calculatResult(amount, currency);
+
+        resultElement.innerText = `${result.toFixed(2)}`;
+    });
+    
+}
 
 
 
