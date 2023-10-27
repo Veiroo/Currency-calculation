@@ -1,22 +1,13 @@
 {
-
-    let formElement = document.querySelector(".js-form");
-    let selectElement = document.querySelector(".js-select");
-    let resultElement = document.querySelector(".js-result");
-    let valueElement = document.querySelector(".js-value");
-
-    formElement.addEventListener("input", (event) => {
-        event.preventDefault();
-
-        const currency = selectElement.value;
-        const amount = valueElement.value;
+    
+    const formElement = document.querySelector(".js-form");
 
         const calculatResult = (amount, currency) => {
             const ratedolarAmerykański = 0.23;
             const ratedolarNowozelandzki = 0.36;
             const ratedolarKanadyjski = 0.31;
             const ratelej = 1.04;
-            
+
 
             switch (currency) {
 
@@ -31,15 +22,21 @@
 
                 case "lej":
                     return amount * ratelej;
-            } 
+            }
         }
+        formElement.addEventListener("input", (event) => {
+            event.preventDefault();
 
-        const result = calculatResult(amount, currency);
+            const formElement = document.querySelector(".js-form");
+            const selectElement = document.querySelector(".js-select");
+            const valueElement = document.querySelector(".js-value");
+            const currency = selectElement.value;
+            const amount = valueElement.value;
+            const resultElement = document.querySelector(".js-result");
 
-        resultElement.innerText = `${result.toFixed(2)}`;
-    });
-    
-}
+            const result = calculatResult(amount, currency);
 
+            resultElement.innerText = `${result.toFixed(2)}`;
+        });
 
-
+    }
