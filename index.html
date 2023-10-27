@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/form.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/body.css" rel="stylesheet">
+    <link rel="icon" href="images/calculator.ico">
+    <script defer src="js/form.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <title>kalkulator walut</title>
+</head>
+
+<body class="body">
+    <div class="background">
+
+
+        <form class="js-form form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kalkulator walut</legend>
+                <p>
+                    <label for="value-pln"><span class="form__text">Wpisz kwotę w PLN: </span></label>
+                    <input value="1" step="any" min="1" required type="number" id="value-pln" name="pln"
+                        class="js-value form__input form__text">
+                </p>
+                <p>
+                    <label><span class="form__text">Waluta : </span>
+                        <select name="waluty" class="js-select form__input ">
+                            <option class="js-select__option1" value="dolarAmerykański">Dolar amerykański</option>
+                            <option class="js-select__option2" value="dolarNowozelandzki">Dolar nowozelandzki</option>
+                            <option class="js-select__option3" value="dolarKanadyjski">Dolar kanadyjski</option>
+                            <option class="js-select__option4" value="lej">Lej rumuński</option>
+                        </select>
+                    </label>
+                </p>
+
+                <span class="form__text">Kwota: </span>
+                <strong class="js-result 
+        form__text">0.23</strong>
+
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
